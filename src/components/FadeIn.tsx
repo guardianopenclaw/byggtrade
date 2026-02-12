@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, ReactNode } from "react";
 
 export default function FadeIn({
   children,
@@ -15,25 +15,27 @@ export default function FadeIn({
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setTimeout(() => setVisible(true), delay);
-          observer.disconnect();
+          observer.unobserve(el);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.15 }
     );
-    if (ref.current) observer.observe(ref.current);
+    observer.observe(el);
     return () => observer.disconnect();
   }, [delay]);
 
   return (
     <div
       ref={ref}
-      className={`${className} transition-all duration-700 ease-out ${
+      className={`transition-all duration-700 ease-out ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
+      } ${className}`}
     >
       {children}
     </div>

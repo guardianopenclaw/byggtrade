@@ -2,16 +2,18 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Byggtrade | Parkett, Laminat & Vinylgulv",
+  title: "Nordic Floor | Premium Klikk-Vinyl Gulv",
   description:
-    "Byggtrade leverer kvalitetsgulv til norske hjem og bedrifter. Utforsk vårt utvalg av parkett, laminat og vinylgulv.",
-  keywords: "parkett, laminat, vinyl, gulv, Norge, Byggtrade",
+    "Nordic Floor er Norges ledende leverandør av premium klikk-vinyl gulv. Vanntett, slitesterkt og enkelt å installere. Utforsk våre kolleksjoner.",
+  keywords:
+    "klikk-vinyl, vinyl gulv, click vinyl, vanntett gulv, Nordic Floor, nordicfloor, gulv Norge",
   openGraph: {
-    title: "Byggtrade | Parkett, Laminat & Vinylgulv",
+    title: "Nordic Floor | Premium Klikk-Vinyl Gulv",
     description:
-      "Kvalitetsgulv til norske hjem og bedrifter. Parkett, laminat og vinyl.",
+      "Norges ledende leverandør av premium klikk-vinyl gulv. Vanntett, slitesterkt og enkelt å installere.",
     type: "website",
     locale: "nb_NO",
+    url: "https://nordicfloor.no",
   },
 };
 
@@ -24,11 +26,13 @@ export default function RootLayout({
     <html lang="nb">
       <head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body className="bg-warm-50 text-warm-900 antialiased">{children}</body>
+      <body className="bg-nordic-50 text-nordic-900 antialiased font-sans">
+        {children}
+      </body>
     </html>
   );
 }

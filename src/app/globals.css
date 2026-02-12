@@ -13,6 +13,18 @@
   --color-warm-900: #3d3027;
   --color-warm-950: #2a1f19;
 
+  --color-nordic-50: #f7f7f6;
+  --color-nordic-100: #e8e6e3;
+  --color-nordic-200: #d1cdc7;
+  --color-nordic-300: #b5aea4;
+  --color-nordic-400: #968c7f;
+  --color-nordic-500: #7a6f62;
+  --color-nordic-600: #635a4f;
+  --color-nordic-700: #514a41;
+  --color-nordic-800: #3e3833;
+  --color-nordic-900: #2c2824;
+  --color-nordic-950: #1a1815;
+
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -33,4 +45,17 @@ html {
 
 .animate-fade-in-up {
   animation: fade-in-up 0.7s ease-out forwards;
+}
+
+@keyframes hero-zoom {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.animate-hero-zoom {
+  animation: hero-zoom 8s ease-out forwards;
 }
