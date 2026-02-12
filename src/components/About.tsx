@@ -3,7 +3,7 @@ import FadeIn from "./FadeIn";
 const stats = [
   { value: "50+", label: "Dekorer" },
   { value: "25 år", label: "Garanti" },
-  { value: "Gratis", label: "Prøvebit" },
+  { value: "Gratis", label: "Vareprøve" },
 ];
 
 export default function About() {
