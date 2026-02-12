@@ -24,7 +24,7 @@ export default function Hero() {
           <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-4">
             Premium <span className="font-semibold">klikk-vinyl</span>
           </h1>
-          <p className="text-white/50 text-lg md:text-xl font-light mb-6">
+          <p className="text-[#c8a87c] text-lg md:text-xl font-light tracking-wide mb-6">
             for norske hjem
           </p>
         </FadeIn>
