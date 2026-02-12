@@ -115,9 +115,9 @@ export default function Contact() {
               </div>
 
               <div className="p-8 bg-nordic-50">
-                <h4 className="font-semibold text-[#1a1a1a] mb-3">Gratis prøvebit</h4>
+                <h4 className="font-semibold text-[#1a1a1a] mb-3">Gratis vareprøve</h4>
                 <p className="text-nordic-500 font-light leading-relaxed">
-                  Usikker på farge eller tekstur? Vi sender deg gratis prøvebiter 
+                  Usikker på farge eller tekstur? Vi sender deg gratis vareprøver 
                   slik at du kan se og føle kvaliteten hjemme hos deg. Bare velg 
                   kolleksjonen du er interessert i, så sender vi ut prøver 
                   innen 2–3 virkedager.

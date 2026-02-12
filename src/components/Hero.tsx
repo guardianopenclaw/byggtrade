@@ -21,11 +21,12 @@ export default function Hero() {
           </p>
         </FadeIn>
         <FadeIn delay={200}>
-          <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-light leading-tight mb-6">
+          <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-4">
             Premium <span className="font-semibold">klikk-vinyl</span>
-            <br />
-            for norske hjem
           </h1>
+          <p className="text-white/50 text-lg md:text-xl font-light mb-6">
+            for norske hjem
+          </p>
         </FadeIn>
         <FadeIn delay={400}>
           <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed">
@@ -45,7 +46,7 @@ export default function Hero() {
               href="#kontakt"
               className="px-10 py-4 border border-white/30 text-white font-medium tracking-wider uppercase text-sm hover:bg-white/10 transition-colors duration-200"
             >
-              Få gratis prøvebit
+              Bestill gratis vareprøve
             </a>
           </div>
         </FadeIn>
