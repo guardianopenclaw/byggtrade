@@ -1,29 +1,70 @@
 import FadeIn from "./FadeIn";
 
-const collections = [
+const products = [
   {
-    name: "Nordic Oak Collection",
-    desc: "Tidløs eik i varme naturtoner. Skandinavisk eleganse som passer i ethvert rom.",
+    name: "Amaron Superiore",
+    desc: "Ekstra store vinylplanker på over 183 cm med synkronisert naturstruktur og dyp matt finish. Premium klikk-vinyl med hypernaturlig effekt.",
+    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&auto=format&fit=crop",
+    specs: [
+      { label: "Dimensjoner", value: "1836 × 229 mm" },
+      { label: "Lås", value: "5G i-Click" },
+      { label: "Garanti", value: "25 år" },
+      { label: "Bruksklasse", value: "23/33" },
+    ],
+    badge: "Premium",
+    features: ["Titan Nano Layer — 30% økt ripemotstand", "EIR-pregling", "HD Mineral Core"],
+  },
+  {
+    name: "Amaron Herringbone",
+    desc: "Klassisk fiskebensmønster som er populært blant arkitekter og interiørdesignere. Vakre, naturlige dekorer med tidløs eleganse.",
     img: "https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800&q=80&auto=format&fit=crop",
-    colors: "Naturlig eik, Honning eik, Hvitvasket eik, Røkt eik",
+    specs: [
+      { label: "Dimensjoner", value: "615 × 123 mm" },
+      { label: "Lås", value: "5G i-Click" },
+      { label: "Garanti", value: "20 år" },
+      { label: "Bruksklasse", value: "23/33" },
+    ],
+    badge: "Fiskebensmønster",
+    features: ["Synkronisert struktur", "Tidløs design", "HD Mineral Core"],
   },
   {
-    name: "Nordic Stone Collection",
-    desc: "Stein- og betong-look for den moderne minimalisten. Rene linjer, kul eleganse.",
-    img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80&auto=format&fit=crop",
-    colors: "Carrara, Betong grå, Skifer, Kalkstein",
-  },
-  {
-    name: "Nordic Urban Collection",
-    desc: "Moderne grå-toner med urban karakter. For deg som tør å skille deg ut.",
+    name: "Amaron Wood",
+    desc: "Sterke, uttrykksfulle farger i store format. Perfekt for store, åpne flater med høyeste bruksklasse og 20 års garanti.",
     img: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80&auto=format&fit=crop",
-    colors: "Storm grå, Grafitt, Antrasitt, Dusk",
+    specs: [
+      { label: "Dimensjoner", value: "1511 × 229 mm" },
+      { label: "Lås", value: "5G i-Click" },
+      { label: "Garanti", value: "20 år" },
+      { label: "Bruksklasse", value: "23/33" },
+    ],
+    badge: null,
+    features: ["Uttrykksfulle dekorer", "Store planker", "HD Mineral Core"],
   },
   {
-    name: "Nordic Nature Collection",
-    desc: "Autentisk tre-look med rustikk sjarm. Naturen inn i hjemmet ditt.",
-    img: "https://images.unsplash.com/photo-1615873968403-89e068629265?w=800&q=80&auto=format&fit=crop",
-    colors: "Villmark, Drivved, Bjørk, Furu",
+    name: "Amaron Stone XXL",
+    desc: "Industriell loft-karakter med betong- og steindekorer. Store fliser for moderne interiører med høyeste bruksklasse.",
+    img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80&auto=format&fit=crop",
+    specs: [
+      { label: "Dimensjoner", value: "914 × 457 mm" },
+      { label: "Lås", value: "5G i-Click" },
+      { label: "Garanti", value: "20 år" },
+      { label: "Bruksklasse", value: "23/33" },
+    ],
+    badge: "XXL Format",
+    features: ["Betong/stein-look", "Industriell karakter", "HD Mineral Core"],
+  },
+  {
+    name: "Liberal",
+    desc: "Skandinavisk design med varme, naturlige farger. Brede paneler og budsjettvennlig inngang til klikk-vinyl av høy kvalitet.",
+    img: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80&auto=format&fit=crop",
+    specs: [
+      { label: "Dimensjoner", value: "1220 × 229 mm" },
+      { label: "Lås", value: "2G" },
+      { label: "Garanti", value: "15 år" },
+      { label: "Bruksklasse", value: "23/32" },
+    ],
+    badge: "Bestselger",
+    features: ["Skandinavisk look", "Brede paneler", "HD Mineral Core"],
   },
 ];
 
@@ -34,44 +75,84 @@ export default function Collections() {
         <FadeIn>
           <div className="text-center mb-16">
             <p className="text-[#c8a87c] text-sm tracking-[0.3em] uppercase mb-4 font-medium">
-              Våre kolleksjoner
+              Arbiton kolleksjoner
             </p>
             <h2 className="text-4xl md:text-5xl font-light text-[#1a1a1a]">
-              Finn din <span className="font-semibold">stil</span>
+              Klikk-vinyl med{" "}
+              <span className="font-semibold">HD Mineral Core</span>
             </h2>
             <p className="mt-4 text-nordic-500 max-w-2xl mx-auto text-lg font-light">
-              Fire unike kolleksjoner med over 50 dekorer. Alle med HD Mineral Core, 
-              vanntett kjerne og klikkesystem for enkel installasjon.
+              Fem unike kolleksjoner for ethvert prosjekt — fra premium fiskebensmønster
+              til budsjettvennlige alternativer. Alle med vanntett kjerne og enkel installasjon.
             </p>
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {collections.map((c, i) => (
-            <FadeIn key={c.name} delay={i * 150}>
-              <div className="group relative overflow-hidden bg-nordic-50 cursor-pointer">
-                <div className="aspect-[4/3] overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {products.map((p, i) => (
+            <FadeIn key={p.name} delay={i * 120}>
+              <div className="group relative flex flex-col overflow-hidden bg-nordic-50 h-full">
+                {/* Image */}
+                <div className="aspect-[4/3] overflow-hidden relative">
                   <img
-                    src={c.img}
-                    alt={c.name}
+                    src={p.img}
+                    alt={p.name}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
+                  {p.badge && (
+                    <span className="absolute top-4 left-4 bg-[#c8a87c] text-white text-xs font-semibold tracking-wider uppercase px-3 py-1.5">
+                      {p.badge}
+                    </span>
+                  )}
                 </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-semibold text-[#1a1a1a] mb-2">
-                    {c.name}
+
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="text-xl font-semibold text-[#1a1a1a] mb-2">
+                    {p.name}
                   </h3>
-                  <p className="text-nordic-500 font-light leading-relaxed mb-4">
-                    {c.desc}
+                  <p className="text-nordic-500 font-light leading-relaxed text-sm mb-4">
+                    {p.desc}
                   </p>
-                  <p className="text-sm text-nordic-400">
-                    <span className="text-[#c8a87c] font-medium">Dekorer:</span> {c.colors}
-                  </p>
-                  <div className="mt-6 flex items-center gap-2 text-[#c8a87c] text-sm font-medium tracking-wider uppercase">
-                    <span>Se kolleksjonen</span>
-                    <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform group-hover:translate-x-1">
-                      <path d="M3 8h10M9 4l4 4-4 4" />
-                    </svg>
+
+                  {/* Specs grid */}
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-2 mb-4 text-sm">
+                    {p.specs.map((s) => (
+                      <div key={s.label}>
+                        <span className="text-nordic-400 text-xs uppercase tracking-wider">
+                          {s.label}
+                        </span>
+                        <p className="text-[#1a1a1a] font-medium">{s.value}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Features */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {p.features.map((f) => (
+                      <span
+                        key={f}
+                        className="text-xs bg-nordic-100 text-nordic-600 px-2 py-1 rounded"
+                      >
+                        {f}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* CTA buttons */}
+                  <div className="mt-auto flex gap-3">
+                    <a
+                      href="#kontakt"
+                      className="flex-1 text-center text-sm font-medium tracking-wider uppercase bg-[#c8a87c] text-white py-3 px-4 hover:bg-[#b89868] transition-colors"
+                    >
+                      Be om tilbud
+                    </a>
+                    <a
+                      href="#kontakt"
+                      className="flex-1 text-center text-sm font-medium tracking-wider uppercase border border-[#c8a87c] text-[#c8a87c] py-3 px-4 hover:bg-[#c8a87c] hover:text-white transition-colors"
+                    >
+                      Vareprøve
+                    </a>
                   </div>
                 </div>
               </div>
