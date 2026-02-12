@@ -6,108 +6,133 @@ export default function Contact() {
   return (
     <section id="kontakt" className="py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16">
+        <FadeIn>
+          <div className="text-center mb-16">
+            <p className="text-[#c8a87c] text-sm tracking-[0.3em] uppercase mb-4 font-medium">
+              Kontakt oss
+            </p>
+            <h2 className="text-4xl md:text-5xl font-light text-[#1a1a1a]">
+              Få et uforpliktende <span className="font-semibold">tilbud</span>
+            </h2>
+          </div>
+        </FadeIn>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <FadeIn>
-            <div>
-              <p className="text-warm-500 font-semibold tracking-widest uppercase text-sm mb-3">
-                Kontakt oss
-              </p>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Få et uforpliktende tilbud
-              </h2>
-              <p className="text-nordic-400 text-lg leading-relaxed mb-10">
-                Vi hjelper deg gjerne med å finne det perfekte klikk-vinyl gulvet.
-                Ta kontakt for en prat eller bestill gratis prøvebit.
-              </p>
-
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-warm-100 rounded-lg flex items-center justify-center shrink-0">
-                    <svg className="w-5 h-5 text-warm-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-lg">Adresse</h4>
-                    <p className="text-nordic-400">Storgata 1, 0155 Oslo</p>
-                  </div>
+            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm text-nordic-500 mb-2 tracking-wider uppercase">
+                    Navn
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full px-4 py-3 bg-nordic-50 border border-nordic-200 focus:border-[#c8a87c] outline-none transition-colors text-[#1a1a1a]"
+                    placeholder="Ditt navn"
+                  />
                 </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-warm-100 rounded-lg flex items-center justify-center shrink-0">
-                    <svg className="w-5 h-5 text-warm-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-lg">E-post</h4>
-                    <p className="text-nordic-400">post@nordicfloor.no</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-warm-100 rounded-lg flex items-center justify-center shrink-0">
-                    <svg className="w-5 h-5 text-warm-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-lg">Telefon</h4>
-                    <p className="text-nordic-400">+47 22 00 00 00</p>
-                  </div>
+                <div>
+                  <label className="block text-sm text-nordic-500 mb-2 tracking-wider uppercase">
+                    E-post
+                  </label>
+                  <input
+                    type="email"
+                    className="w-full px-4 py-3 bg-nordic-50 border border-nordic-200 focus:border-[#c8a87c] outline-none transition-colors text-[#1a1a1a]"
+                    placeholder="din@epost.no"
+                  />
                 </div>
               </div>
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={200}>
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="bg-nordic-50 p-8 md:p-10 rounded-2xl space-y-6"
-            >
-              <div>
-                <label className="block text-sm font-semibold mb-2">Navn</label>
-                <input
-                  type="text"
-                  placeholder="Ditt fulle navn"
-                  className="w-full px-4 py-3 rounded-lg border border-nordic-200 bg-white focus:outline-none focus:ring-2 focus:ring-warm-500 focus:border-transparent transition"
-                />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm text-nordic-500 mb-2 tracking-wider uppercase">
+                    Telefon
+                  </label>
+                  <input
+                    type="tel"
+                    className="w-full px-4 py-3 bg-nordic-50 border border-nordic-200 focus:border-[#c8a87c] outline-none transition-colors text-[#1a1a1a]"
+                    placeholder="+47 xxx xx xxx"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm text-nordic-500 mb-2 tracking-wider uppercase">
+                    Jeg er interessert i
+                  </label>
+                  <select className="w-full px-4 py-3 bg-nordic-50 border border-nordic-200 focus:border-[#c8a87c] outline-none transition-colors text-[#1a1a1a]">
+                    <option value="">Velg kolleksjon</option>
+                    <option value="oak">Nordic Oak Collection</option>
+                    <option value="stone">Nordic Stone Collection</option>
+                    <option value="urban">Nordic Urban Collection</option>
+                    <option value="nature">Nordic Nature Collection</option>
+                  </select>
+                </div>
               </div>
               <div>
-                <label className="block text-sm font-semibold mb-2">E-post</label>
-                <input
-                  type="email"
-                  placeholder="din@epost.no"
-                  className="w-full px-4 py-3 rounded-lg border border-nordic-200 bg-white focus:outline-none focus:ring-2 focus:ring-warm-500 focus:border-transparent transition"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold mb-2">Telefon</label>
-                <input
-                  type="tel"
-                  placeholder="+47 000 00 000"
-                  className="w-full px-4 py-3 rounded-lg border border-nordic-200 bg-white focus:outline-none focus:ring-2 focus:ring-warm-500 focus:border-transparent transition"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold mb-2">Melding</label>
+                <label className="block text-sm text-nordic-500 mb-2 tracking-wider uppercase">
+                  Melding
+                </label>
                 <textarea
-                  rows={4}
-                  placeholder="Fortell oss om ditt prosjekt – rom, areal, ønsket stil..."
-                  className="w-full px-4 py-3 rounded-lg border border-nordic-200 bg-white focus:outline-none focus:ring-2 focus:ring-warm-500 focus:border-transparent transition resize-none"
+                  rows={5}
+                  className="w-full px-4 py-3 bg-nordic-50 border border-nordic-200 focus:border-[#c8a87c] outline-none transition-colors resize-none text-[#1a1a1a]"
+                  placeholder="Fortell oss om prosjektet ditt — antall kvm, romtype, ønsket stil..."
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-warm-500 hover:bg-warm-600 text-white font-semibold py-4 rounded-lg transition-colors text-lg"
+                className="w-full sm:w-auto px-12 py-4 bg-[#c8a87c] text-[#1a1a1a] font-medium tracking-wider uppercase text-sm hover:bg-[#b8956a] transition-colors duration-200"
               >
                 Send forespørsel
               </button>
-              <p className="text-nordic-400 text-xs text-center">
-                Vi svarer normalt innen 24 timer.
-              </p>
             </form>
+          </FadeIn>
+
+          <FadeIn delay={200}>
+            <div className="space-y-10">
+              <div>
+                <h3 className="text-xl font-semibold text-[#1a1a1a] mb-4">
+                  Kontaktinformasjon
+                </h3>
+                <div className="space-y-4 text-nordic-500 font-light">
+                  <div className="flex items-start gap-4">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" className="text-[#c8a87c] mt-0.5 shrink-0">
+                      <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span>post@nordicfloor.no</span>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" className="text-[#c8a87c] mt-0.5 shrink-0">
+                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                    </svg>
+                    <span>+47 22 33 44 55</span>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" className="text-[#c8a87c] mt-0.5 shrink-0">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <span>Oslo, Norge</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-8 bg-nordic-50">
+                <h4 className="font-semibold text-[#1a1a1a] mb-3">Gratis prøvebit</h4>
+                <p className="text-nordic-500 font-light leading-relaxed">
+                  Usikker på farge eller tekstur? Vi sender deg gratis prøvebiter 
+                  slik at du kan se og føle kvaliteten hjemme hos deg. Bare velg 
+                  kolleksjonen du er interessert i, så sender vi ut prøver 
+                  innen 2–3 virkedager.
+                </p>
+              </div>
+
+              <div className="p-8 bg-nordic-50">
+                <h4 className="font-semibold text-[#1a1a1a] mb-3">Forhandlere</h4>
+                <p className="text-nordic-500 font-light leading-relaxed">
+                  Nordic Floor er tilgjengelig gjennom utvalgte forhandlere 
+                  over hele Norge. Kontakt oss for å finne din nærmeste forhandler 
+                  eller for å bli forhandler selv.
+                </p>
+              </div>
+            </div>
           </FadeIn>
         </div>
       </div>

@@ -2,86 +2,88 @@ import FadeIn from "./FadeIn";
 
 const benefits = [
   {
+    title: "100% vanntett",
+    desc: "HD Mineral Core gjør gulvet helt vanntett. Perfekt for bad, kjøkken og entre.",
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707" />
+      <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+        <path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0L12 2.69z" />
       </svg>
     ),
-    title: "100% Vanntett",
-    desc: "Tåler vann i alle rom – perfekt for bad, kjøkken og entre. Ingen fuktskader.",
   },
   {
+    title: "Gulvvarme-kompatibel",
+    desc: "Lav termisk motstand gir effektiv varmeoverføring. Ideelt for vannbåren og elektrisk gulvvarme.",
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
       </svg>
     ),
-    title: "Ekstremt Slitesterkt",
-    desc: "Høy sliteklasse som tåler daglig bruk, kjæledyr og møbler uten riper.",
   },
   {
+    title: "Enkel installasjon",
+    desc: "Patentert klikkesystem (5G-lås) gjør legging til en enkel DIY-jobb. Ingen lim nødvendig.",
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+      <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+        <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
       </svg>
     ),
-    title: "Enkel DIY-installasjon",
-    desc: "Patentert klikkesystem – legg gulvet selv uten lim eller spesialverktøy.",
   },
   {
+    title: "Lydabsorberende",
+    desc: "Integrert lyddemping reduserer trinnlyd og romklang. Stille og behagelig underlag.",
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+      <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+        <path d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 010 7.07M19.07 4.93a10 10 0 010 14.14" />
       </svg>
     ),
-    title: "Passer Gulvvarme",
-    desc: "Kompatibelt med vannbåren og elektrisk gulvvarme. Effektiv varmeoverføring.",
   },
   {
+    title: "Ekstremt slitesterkt",
+    desc: "Bruksklasse 33 — tåler intensiv kommersiell bruk. 25 års garanti for privatboliger.",
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+      <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
       </svg>
     ),
-    title: "Vedlikeholdsfritt",
-    desc: "Krever minimalt vedlikehold – tørk av med en fuktig klut, ferdig.",
   },
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-    ),
     title: "Allergivennlig",
-    desc: "Glatt overflate samler ikke støv, midd eller allergener. Bedre innemiljø.",
+    desc: "Glatt overflate samler ikke støv og allergener. Enkel rengjøring med fuktig mopp.",
+    icon: (
+      <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+      </svg>
+    ),
   },
 ];
 
 export default function Benefits() {
   return (
-    <section id="fordeler" className="py-24 md:py-32 bg-nordic-950 text-white">
+    <section id="fordeler" className="py-24 md:py-32 bg-[#1a1a1a]">
       <div className="max-w-7xl mx-auto px-6">
         <FadeIn>
-          <p className="text-warm-400 font-semibold tracking-widest uppercase text-sm mb-3 text-center">
-            Fordeler
-          </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-            Hvorfor velge klikk-vinyl?
-          </h2>
-          <p className="text-white/60 text-center max-w-2xl mx-auto mb-16 text-lg">
-            Klikk-vinyl kombinerer det beste fra moderne teknologi og tidløs design.
-          </p>
+          <div className="text-center mb-16">
+            <p className="text-[#c8a87c] text-sm tracking-[0.3em] uppercase mb-4 font-medium">
+              Fordeler
+            </p>
+            <h2 className="text-4xl md:text-5xl font-light text-white">
+              Hvorfor <span className="font-semibold">klikk-vinyl?</span>
+            </h2>
+            <p className="mt-4 text-white/50 max-w-2xl mx-auto text-lg font-light">
+              HD Mineral Core teknologi gir deg det beste fra alle verdener — 
+              skjønnheten til tre, holdbarheten til stein, og enkelheten til vinyl.
+            </p>
+          </div>
         </FadeIn>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((b, i) => (
-            <FadeIn key={b.title} delay={i * 80}>
-              <div className="p-8 rounded-xl border border-white/10 hover:border-warm-500/30 bg-white/5 hover:bg-white/10 transition-all duration-300 group">
-                <div className="text-warm-400 mb-4 group-hover:scale-110 transition-transform">
-                  {b.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-2">{b.title}</h3>
-                <p className="text-white/60 leading-relaxed">{b.desc}</p>
+            <FadeIn key={b.title} delay={i * 100}>
+              <div className="p-8 border border-white/10 hover:border-[#c8a87c]/30 transition-colors duration-300">
+                <div className="text-[#c8a87c] mb-5">{b.icon}</div>
+                <h3 className="text-xl font-semibold text-white mb-3">{b.title}</h3>
+                <p className="text-white/50 font-light leading-relaxed">{b.desc}</p>
               </div>
             </FadeIn>
           ))}
