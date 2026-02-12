@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Collections from "@/components/Collections";
+import Awards from "@/components/Awards";
 import Benefits from "@/components/Benefits";
 import About from "@/components/About";
 import Inspiration from "@/components/Inspiration";
@@ -14,6 +15,7 @@ export default function Home() {
       <main>
         <Hero />
         <Collections />
+        <Awards />
         <Benefits />
         <About />
         <Inspiration />
