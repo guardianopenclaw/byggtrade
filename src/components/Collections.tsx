@@ -4,7 +4,7 @@ const products = [
   {
     name: "Amaron Superiore",
     desc: "Ekstra store vinylplanker på over 183 cm med synkronisert naturstruktur og dyp matt finish. Premium klikk-vinyl med hypernaturlig effekt.",
-    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&auto=format&fit=crop",
+    img: "https://photos.arbiton.com/media/cache/list/photos/5905167856512_I_02.png",
     specs: [
       { label: "Dimensjoner", value: "1836 × 229 mm" },
       { label: "Lås", value: "5G i-Click" },
@@ -17,7 +17,7 @@ const products = [
   {
     name: "Amaron Herringbone",
     desc: "Klassisk fiskebensmønster som er populært blant arkitekter og interiørdesignere. Vakre, naturlige dekorer med tidløs eleganse.",
-    img: "https://images.unsplash.com/photo-1615529182904-14819c35db37?w=800&q=80&auto=format&fit=crop",
+    img: "https://photos.arbiton.com/media/cache/list/photos/5905167826683_I_05.png",
     specs: [
       { label: "Dimensjoner", value: "615 × 123 mm" },
       { label: "Lås", value: "5G i-Click" },
@@ -30,20 +30,20 @@ const products = [
   {
     name: "Amaron Wood",
     desc: "Sterke, uttrykksfulle farger i store format. Perfekt for store, åpne flater med høyeste bruksklasse og 20 års garanti.",
-    img: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80&auto=format&fit=crop",
+    img: "https://photos.arbiton.com/media/cache/list/photos/5905167856420_I_01.png",
     specs: [
       { label: "Dimensjoner", value: "1511 × 229 mm" },
       { label: "Lås", value: "5G i-Click" },
       { label: "Garanti", value: "20 år" },
       { label: "Bruksklasse", value: "23/33" },
     ],
-    badge: null,
+    badge: "Bestselger",
     features: ["Uttrykksfulle dekorer", "Store planker", "HD Mineral Core"],
   },
   {
     name: "Amaron Stone XXL",
     desc: "Industriell loft-karakter med betong- og steindekorer. Store fliser for moderne interiører med høyeste bruksklasse.",
-    img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80&auto=format&fit=crop",
+    img: "https://photos.arbiton.com/media/cache/list/photos/webp/5905167876800_D_02.webp",
     specs: [
       { label: "Dimensjoner", value: "914 × 457 mm" },
       { label: "Lås", value: "5G i-Click" },
@@ -56,7 +56,7 @@ const products = [
   {
     name: "Liberal",
     desc: "Skandinavisk design med varme, naturlige farger. Brede paneler og budsjettvennlig inngang til klikk-vinyl av høy kvalitet.",
-    img: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80&auto=format&fit=crop",
+    img: "https://photos.arbiton.com/media/cache/list/photos/5905167856475_I_03.jpg",
     specs: [
       { label: "Dimensjoner", value: "1220 × 229 mm" },
       { label: "Lås", value: "2G" },
