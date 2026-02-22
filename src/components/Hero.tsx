@@ -34,10 +34,19 @@ export default function Hero() {
             </p>
           </FadeIn>
           <FadeIn delay={400}>
-            <p className="text-white/85 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed [text-shadow:_0_2px_8px_rgb(0_0_0_/_60%)] tracking-wide">
+            <p className="text-white/85 text-lg md:text-xl max-w-2xl mx-auto mb-8 font-light leading-relaxed [text-shadow:_0_2px_8px_rgb(0_0_0_/_60%)] tracking-wide">
               Vanntette gulv med HD Mineral Core teknologi. Enkelt å legge, 
               vanskelig å slite ut. Perfekt for alle rom i hjemmet.
             </p>
+            {/* Pricing callout */}
+            <div className="inline-block px-8 py-4 mb-10 border-2 border-[#c8a87c]/40 bg-[#1a1a1a]/60 backdrop-blur-md">
+              <div className="flex items-baseline gap-3 flex-wrap justify-center">
+                <span className="text-[#c8a87c] text-3xl md:text-4xl font-semibold">Fra 300 kr/kvm</span>
+                <span className="text-white/60 text-sm md:text-base font-light">
+                  Rimeligere enn heltre, mer holdbart enn laminat
+                </span>
+              </div>
+            </div>
           </FadeIn>
           <FadeIn delay={600}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

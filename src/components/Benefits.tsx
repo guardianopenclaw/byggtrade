@@ -77,6 +77,35 @@ export default function Benefits() {
           </div>
         </FadeIn>
 
+        {/* Warranty Badge */}
+        <FadeIn delay={100}>
+          <div className="mb-16 max-w-2xl mx-auto">
+            <div className="border-2 border-[#c8a87c] bg-[#c8a87c]/5 p-8 md:p-10 text-center">
+              <div className="flex justify-center mb-4">
+                <svg
+                  width="48"
+                  height="48"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  viewBox="0 0 24 24"
+                  className="text-[#c8a87c]"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </div>
+              <h3 className="text-2xl md:text-3xl font-semibold text-white mb-3">
+                25 års garanti for privatboliger
+              </h3>
+              <p className="text-white/70 font-light leading-relaxed max-w-xl mx-auto">
+                Full garanti mot produksjonsfeil. Dekker slitasje ved normal bruk. 
+                Vi står bak kvaliteten på våre produkter med en av bransjens lengste garantier.
+              </p>
+            </div>
+          </div>
+        </FadeIn>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((b, i) => (
             <FadeIn key={b.title} delay={i * 100} className="h-full">
