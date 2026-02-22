@@ -79,8 +79,8 @@ export default function Benefits() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((b, i) => (
-            <FadeIn key={b.title} delay={i * 100}>
-              <div className="p-8 border border-white/10 hover:border-[#c8a87c]/30 transition-colors duration-300">
+            <FadeIn key={b.title} delay={i * 100} className="h-full">
+              <div className="h-full p-8 border border-white/10 hover:border-[#c8a87c]/30 transition-colors duration-300 flex flex-col">
                 <div className="text-[#c8a87c] mb-5">{b.icon}</div>
                 <h3 className="text-xl font-semibold text-white mb-3">{b.title}</h3>
                 <p className="text-white/50 font-light leading-relaxed">{b.desc}</p>
