@@ -44,6 +44,20 @@ export default function RoomCalculator() {
         </FadeIn>
 
         <FadeIn delay={200}>
+          {/* Pricing callout */}
+          <div className="flex justify-center mb-8">
+            <div className="inline-block px-8 py-4 border-2 border-[#c8a87c]/40 bg-[#1a1a1a]/60 backdrop-blur-md">
+              <div className="flex items-baseline gap-3 flex-wrap justify-center">
+                <span className="text-[#c8a87c] text-3xl md:text-4xl font-semibold">Fra 300 kr/kvm</span>
+                <span className="text-white/60 text-sm md:text-base font-light">
+                  Rimeligere enn heltre, mer holdbart enn laminat
+                </span>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={300}>
           <div className="border border-[#c8a87c]/20 bg-[#1a1a1a] p-8 md:p-12">
             {/* Input fields */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
