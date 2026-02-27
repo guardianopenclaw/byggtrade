@@ -239,9 +239,11 @@ export default function Collections() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {/* iF Design Award */}
               <div className="flex flex-col items-center p-8 bg-nordic-50 border border-nordic-200">
-                <div className="w-24 h-24 mb-4 flex items-center justify-center bg-white rounded-full border-2 border-[#c8a87c]">
-                  <span className="text-4xl font-bold text-[#c8a87c]">iF</span>
-                </div>
+                <img 
+                  src="/awards/if-design-award.svg" 
+                  alt="iF Design Award" 
+                  className="w-24 h-24 mb-4"
+                />
                 <h4 className="text-xl font-semibold text-[#1a1a1a] mb-2">
                   iF Design Award 2025
                 </h4>
@@ -257,9 +259,11 @@ export default function Collections() {
 
               {/* Red Dot Award */}
               <div className="flex flex-col items-center p-8 bg-nordic-50 border border-nordic-200">
-                <div className="w-24 h-24 mb-4 flex items-center justify-center bg-white rounded-full border-2 border-[#c8a87c]">
-                  <div className="w-12 h-12 rounded-full bg-[#c8a87c]"></div>
-                </div>
+                <img 
+                  src="/awards/red-dot-award.svg" 
+                  alt="Red Dot Award" 
+                  className="w-24 h-24 mb-4"
+                />
                 <h4 className="text-xl font-semibold text-[#1a1a1a] mb-2">
                   Red Dot Award
                 </h4>
