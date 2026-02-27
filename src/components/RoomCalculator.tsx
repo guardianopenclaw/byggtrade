@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import FadeIn from "./FadeIn";
-import { products } from "@/data/products";
+import { allProducts, collections } from "@/data/products-full";
 
 export default function RoomCalculator() {
   const [length, setLength] = useState<string>("");
@@ -18,20 +18,26 @@ export default function RoomCalculator() {
   };
 
   const area = calculateArea();
-  const selectedProduct = products.find((p) => p.id === selectedProductId);
+  const selectedProduct = allProducts.find((p) => p.id === selectedProductId);
 
   // Beregn med 10% svinn (anbefalt minimum)
   const areaWithWaste = area ? area * 1.1 : null;
 
   // Pris basert på valgt produkt
   const price = selectedProduct && areaWithWaste 
-    ? Math.round(areaWithWaste * selectedProduct.pricePerSqm) 
+    ? Math.round(areaWithWaste * selectedProduct.priceNOK) 
     : null;
 
   // Antall pakker basert på valgt produkt
   const packages = selectedProduct && areaWithWaste
     ? Math.ceil(areaWithWaste / selectedProduct.sqmPerPackage)
     : null;
+
+  // Grupper produkter etter kolleksjon
+  const groupedProducts = Object.keys(collections).reduce((acc, collectionName) => {
+    acc[collectionName] = allProducts.filter(p => p.collection === collectionName);
+    return acc;
+  }, {} as Record<string, typeof allProducts>);
 
   const handleCalculate = () => {
     if (area && selectedProduct) {
@@ -63,9 +69,9 @@ export default function RoomCalculator() {
           <div className="flex justify-center mb-8">
             <div className="inline-block px-8 py-4 border-2 border-[#c8a87c]/40 bg-[#1a1a1a]/60 backdrop-blur-md">
               <div className="flex items-baseline gap-3 flex-wrap justify-center">
-                <span className="text-[#c8a87c] text-3xl md:text-4xl font-semibold">Fra 299 kr/kvm</span>
+                <span className="text-[#c8a87c] text-3xl md:text-4xl font-semibold">Fra 184 kr/m²</span>
                 <span className="text-white/60 text-sm md:text-base font-light">
-                  Rimeligere enn heltre, mer holdbart enn laminat
+                  110 produkter · 10 kolleksjoner · Rimeligere enn heltre
                 </span>
               </div>
             </div>
@@ -97,17 +103,21 @@ export default function RoomCalculator() {
                 }}
               >
                 <option value="" disabled>
-                  Velg en kolleksjon
+                  Velg produkt (110 valgmuligheter)
                 </option>
-                {products.map((product) => (
-                  <option key={product.id} value={product.id}>
-                    {product.name} — {product.pricePerSqm} kr/kvm
-                  </option>
+                {Object.entries(groupedProducts).map(([collectionName, products]) => (
+                  <optgroup key={collectionName} label={`${collectionName} (${collections[collectionName as keyof typeof collections].priceRange})`}>
+                    {products.map((product) => (
+                      <option key={product.id} value={product.id}>
+                        {product.colour} — {product.priceNOK} kr/m²
+                      </option>
+                    ))}
+                  </optgroup>
                 ))}
               </select>
               {selectedProduct && (
                 <p className="text-white/50 text-sm mt-2 font-light">
-                  {selectedProduct.sqmPerPackage.toFixed(2)} kvm per pakke · {selectedProduct.piecesPerPackage} stk per pakke
+                  {selectedProduct.dimension} · {selectedProduct.sqmPerPackage.toFixed(2)} m² per pakke · {selectedProduct.priceNOK} kr/m²
                 </p>
               )}
             </div>
@@ -212,16 +222,24 @@ export default function RoomCalculator() {
                 {/* Product details */}
                 <div className="mb-8 p-6 bg-white/5 border border-[#c8a87c]/20">
                   <h4 className="text-white text-lg font-semibold mb-3">{selectedProduct.name}</h4>
-                  <p className="text-white/70 text-sm mb-4 font-light">{selectedProduct.desc}</p>
+                  <p className="text-white/70 text-sm mb-4 font-light">{selectedProduct.colour}</p>
                   <div className="grid grid-cols-2 gap-4 text-sm">
-                    {selectedProduct.specs.map((spec) => (
-                      <div key={spec.label}>
-                        <span className="text-white/50 text-xs uppercase tracking-wider">
-                          {spec.label}
-                        </span>
-                        <p className="text-white font-medium">{spec.value}</p>
-                      </div>
-                    ))}
+                    <div>
+                      <span className="text-white/50 text-xs uppercase tracking-wider">Kolleksjon</span>
+                      <p className="text-white font-medium">{selectedProduct.collection}</p>
+                    </div>
+                    <div>
+                      <span className="text-white/50 text-xs uppercase tracking-wider">Produktkode</span>
+                      <p className="text-white font-medium">{selectedProduct.code}</p>
+                    </div>
+                    <div>
+                      <span className="text-white/50 text-xs uppercase tracking-wider">Dimensjon</span>
+                      <p className="text-white font-medium">{selectedProduct.dimension}</p>
+                    </div>
+                    <div>
+                      <span className="text-white/50 text-xs uppercase tracking-wider">M² per pakke</span>
+                      <p className="text-white font-medium">{selectedProduct.sqmPerPackage.toFixed(2)} m²</p>
+                    </div>
                   </div>
                 </div>
 
