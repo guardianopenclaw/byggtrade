@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import FadeIn from "./FadeIn";
+import { products } from "@/data/products";
 
 export default function RoomCalculator() {
   const [length, setLength] = useState<string>("");
   const [width, setWidth] = useState<string>("");
+  const [selectedProductId, setSelectedProductId] = useState<string>("");
   const [showResult, setShowResult] = useState(false);
 
   const calculateArea = () => {
@@ -16,15 +18,28 @@ export default function RoomCalculator() {
   };
 
   const area = calculateArea();
-  const minPrice = area ? Math.round(area * 300) : null;
-  const maxPrice = area ? Math.round(area * 500) : null;
-  const packages = area ? Math.ceil(area / 2) : null;
+  const selectedProduct = products.find((p) => p.id === selectedProductId);
+
+  // Beregn med 10% svinn (anbefalt minimum)
+  const areaWithWaste = area ? area * 1.1 : null;
+
+  // Pris basert på valgt produkt
+  const price = selectedProduct && areaWithWaste 
+    ? Math.round(areaWithWaste * selectedProduct.pricePerSqm) 
+    : null;
+
+  // Antall pakker basert på valgt produkt
+  const packages = selectedProduct && areaWithWaste
+    ? Math.ceil(areaWithWaste / selectedProduct.sqmPerPackage)
+    : null;
 
   const handleCalculate = () => {
-    if (area) {
+    if (area && selectedProduct) {
       setShowResult(true);
     }
   };
+
+  const canCalculate = area && selectedProduct;
 
   return (
     <section className="py-24 md:py-32 bg-gradient-to-b from-[#1a1a1a] to-[#0f0f0f]">
@@ -38,7 +53,7 @@ export default function RoomCalculator() {
               Beregn <span className="font-semibold">ditt behov</span>
             </h2>
             <p className="text-white/50 max-w-xl mx-auto text-lg font-light">
-              Få et prisestimat og antall pakker du trenger til ditt rom
+              Velg produkt og oppgi mål for å få eksakt pris og antall pakker
             </p>
           </div>
         </FadeIn>
@@ -48,7 +63,7 @@ export default function RoomCalculator() {
           <div className="flex justify-center mb-8">
             <div className="inline-block px-8 py-4 border-2 border-[#c8a87c]/40 bg-[#1a1a1a]/60 backdrop-blur-md">
               <div className="flex items-baseline gap-3 flex-wrap justify-center">
-                <span className="text-[#c8a87c] text-3xl md:text-4xl font-semibold">Fra 300 kr/kvm</span>
+                <span className="text-[#c8a87c] text-3xl md:text-4xl font-semibold">Fra 299 kr/kvm</span>
                 <span className="text-white/60 text-sm md:text-base font-light">
                   Rimeligere enn heltre, mer holdbart enn laminat
                 </span>
@@ -59,6 +74,44 @@ export default function RoomCalculator() {
 
         <FadeIn delay={300}>
           <div className="border border-[#c8a87c]/20 bg-[#1a1a1a] p-8 md:p-12">
+            {/* Product selector */}
+            <div className="mb-6">
+              <label className="block text-white/70 text-sm tracking-wider uppercase mb-3">
+                Velg produkt
+              </label>
+              <select
+                value={selectedProductId}
+                onChange={(e) => {
+                  setSelectedProductId(e.target.value);
+                  setShowResult(false);
+                }}
+                className="w-full px-4 py-4 bg-white/5 border border-white/20 text-white text-lg 
+                         focus:border-[#c8a87c] focus:outline-none transition-colors
+                         appearance-none cursor-pointer"
+                style={{
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%23c8a87c' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
+                  backgroundPosition: "right 1rem center",
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "1.5em 1.5em",
+                  paddingRight: "3rem",
+                }}
+              >
+                <option value="" disabled>
+                  Velg en kolleksjon
+                </option>
+                {products.map((product) => (
+                  <option key={product.id} value={product.id}>
+                    {product.name} — {product.pricePerSqm} kr/kvm
+                  </option>
+                ))}
+              </select>
+              {selectedProduct && (
+                <p className="text-white/50 text-sm mt-2 font-light">
+                  {selectedProduct.sqmPerPackage.toFixed(2)} kvm per pakke · {selectedProduct.piecesPerPackage} stk per pakke
+                </p>
+              )}
+            </div>
+
             {/* Input fields */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div>
@@ -102,7 +155,7 @@ export default function RoomCalculator() {
             {/* Calculate button */}
             <button
               onClick={handleCalculate}
-              disabled={!area}
+              disabled={!canCalculate}
               className="w-full px-8 py-4 bg-[#c8a87c] text-[#1a1a1a] font-semibold 
                        tracking-[0.12em] uppercase text-sm hover:bg-[#b8956a] 
                        transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed
@@ -112,9 +165,9 @@ export default function RoomCalculator() {
             </button>
 
             {/* Results */}
-            {showResult && area && (
+            {showResult && area && selectedProduct && areaWithWaste && (
               <div className="mt-10 pt-10 border-t border-white/10">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
                   {/* Area */}
                   <div className="text-center p-6 border border-[#c8a87c]/20 bg-white/5">
                     <div className="text-[#c8a87c] text-4xl font-semibold mb-2">
@@ -125,13 +178,13 @@ export default function RoomCalculator() {
                     </div>
                   </div>
 
-                  {/* Price range */}
+                  {/* Price */}
                   <div className="text-center p-6 border border-[#c8a87c]/20 bg-white/5">
                     <div className="text-[#c8a87c] text-2xl md:text-3xl font-semibold mb-2">
-                      {minPrice?.toLocaleString('nb-NO')} - {maxPrice?.toLocaleString('nb-NO')} kr
+                      {price?.toLocaleString('nb-NO')} kr
                     </div>
                     <div className="text-white/60 text-sm tracking-wider uppercase">
-                      estimert pris
+                      estimert pris (inkl. 10% svinn)
                     </div>
                   </div>
 
@@ -141,8 +194,34 @@ export default function RoomCalculator() {
                       {packages}
                     </div>
                     <div className="text-white/60 text-sm tracking-wider uppercase">
-                      pakker (ca 2 kvm/pakke)
+                      pakker ({selectedProduct.sqmPerPackage.toFixed(2)} kvm/pakke)
                     </div>
+                  </div>
+                </div>
+
+                {/* Waste disclaimer */}
+                <div className="mb-8 p-4 bg-white/5 border border-white/10">
+                  <p className="text-white/70 text-sm font-light leading-relaxed">
+                    <span className="text-[#c8a87c] font-medium">Viktig:</span> Prisberegningen inkluderer 10% svinn, 
+                    som er vanlig for de fleste prosjekter. Ved komplekse rom med mange vinkler, 
+                    hjørner eller uregelmessige former anbefaler vi 15% tillegg. 
+                    Estimatet er basert på erfaring og typiske installasjonsforhold.
+                  </p>
+                </div>
+
+                {/* Product details */}
+                <div className="mb-8 p-6 bg-white/5 border border-[#c8a87c]/20">
+                  <h4 className="text-white text-lg font-semibold mb-3">{selectedProduct.name}</h4>
+                  <p className="text-white/70 text-sm mb-4 font-light">{selectedProduct.desc}</p>
+                  <div className="grid grid-cols-2 gap-4 text-sm">
+                    {selectedProduct.specs.map((spec) => (
+                      <div key={spec.label}>
+                        <span className="text-white/50 text-xs uppercase tracking-wider">
+                          {spec.label}
+                        </span>
+                        <p className="text-white font-medium">{spec.value}</p>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
