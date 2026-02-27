@@ -222,67 +222,29 @@ export default function Collections() {
           })}
         </div>
 
-        {/* Design Awards callout */}
+        {/* Design Awards */}
         <FadeIn delay={600}>
-          <div className="mt-16 border-t border-nordic-200 pt-16">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl font-light text-[#1a1a1a] mb-3">
-                Internasjonalt prisbelønt design
-              </h3>
-              <p className="text-nordic-500 font-light max-w-2xl mx-auto">
-                Arbiton er anerkjent av verdens ledende designinstitusjoner for fremragende
-                kvalitet, funksjonalitet og estetikk.
-              </p>
-            </div>
-
-            {/* Awards grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              {/* iF Design Award */}
-              <div className="flex flex-col items-center p-8 bg-nordic-50 border border-nordic-200">
+          <div className="mt-16 text-center border-t border-nordic-200 pt-16">
+            <h3 className="text-2xl font-light text-[#1a1a1a] mb-8">
+              Internasjonalt prisbelønt design
+            </h3>
+            <div className="flex items-center justify-center gap-12">
+              <div className="text-center">
                 <img 
                   src="/awards/if-design-award.svg" 
-                  alt="iF Design Award" 
-                  className="w-24 h-24 mb-4"
+                  alt="iF Design Award 2025" 
+                  className="h-20 mx-auto mb-2"
                 />
-                <h4 className="text-xl font-semibold text-[#1a1a1a] mb-2">
-                  iF Design Award 2025
-                </h4>
-                <p className="text-sm text-[#c8a87c] font-medium uppercase tracking-wider mb-3">
-                  3x Vinner
-                </p>
-                <p className="text-sm text-nordic-500 text-center font-light leading-relaxed">
-                  En av verdens mest prestisjefylte designutmerkelser. iF Design Award
-                  anerkjenner produkter som kombinerer overlegen design med
-                  eksepsjonell funksjonalitet.
-                </p>
+                <p className="text-xs text-nordic-500 font-medium">3x iF Design Award 2025</p>
               </div>
-
-              {/* Red Dot Award */}
-              <div className="flex flex-col items-center p-8 bg-nordic-50 border border-nordic-200">
+              <div className="text-center">
                 <img 
                   src="/awards/red-dot-award.svg" 
                   alt="Red Dot Award" 
-                  className="w-24 h-24 mb-4"
+                  className="h-20 mx-auto mb-2"
                 />
-                <h4 className="text-xl font-semibold text-[#1a1a1a] mb-2">
-                  Red Dot Award
-                </h4>
-                <p className="text-sm text-[#c8a87c] font-medium uppercase tracking-wider mb-3">
-                  Winner
-                </p>
-                <p className="text-sm text-nordic-500 text-center font-light leading-relaxed">
-                  Internasjonalt anerkjent for produkter med høy designkvalitet.
-                  Red Dot Award setter standarden for innovasjon, holdbarhet
-                  og brukervennlighet.
-                </p>
+                <p className="text-xs text-nordic-500 font-medium">Red Dot Award Winner</p>
               </div>
-            </div>
-
-            <div className="text-center mt-8">
-              <p className="text-sm text-nordic-400 font-light">
-                Utmerkelsene bekrefter Arbiton sin posisjon som Europas ledende
-                produsent av premium klikk-vinyl gulv.
-              </p>
             </div>
           </div>
         </FadeIn>
