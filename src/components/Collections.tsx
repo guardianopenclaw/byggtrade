@@ -222,32 +222,6 @@ export default function Collections() {
           })}
         </div>
 
-        {/* Design Awards */}
-        <FadeIn delay={600}>
-          <div className="mt-16 text-center border-t border-nordic-200 pt-16">
-            <h3 className="text-2xl font-light text-[#1a1a1a] mb-8">
-              Internasjonalt prisbelønt design
-            </h3>
-            <div className="flex items-center justify-center gap-12">
-              <div className="text-center">
-                <img 
-                  src="/awards/if-design-award.svg" 
-                  alt="iF Design Award 2025" 
-                  className="h-20 mx-auto mb-2"
-                />
-                <p className="text-xs text-nordic-500 font-medium">3x iF Design Award 2025</p>
-              </div>
-              <div className="text-center">
-                <img 
-                  src="/awards/red-dot-award.svg" 
-                  alt="Red Dot Award" 
-                  className="h-20 mx-auto mb-2"
-                />
-                <p className="text-xs text-nordic-500 font-medium">Red Dot Award Winner</p>
-              </div>
-            </div>
-          </div>
-        </FadeIn>
       </div>
     </section>
   );

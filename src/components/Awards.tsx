@@ -19,6 +19,11 @@ export default function Awards() {
                 alt="iF Design Award 2025"
                 className="h-16 md:h-20 object-contain"
               />
+              <img
+                src="/awards/red-dot-award.svg"
+                alt="Red Dot Award"
+                className="h-16 md:h-20 object-contain"
+              />
             </div>
 
             {/* Text */}
